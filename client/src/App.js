@@ -1,36 +1,26 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Auth from "./pages/Auth";
-import UserInfo from "./pages/UserInfo";
-import NoMatch from "./pages/NoMatch";
-import TopNav from "./components/TopNav";
+import SaveBooks from "./pages/SaveBooks";
+import SearchBooks from "./pages/SearchBooks";
 import Footer from "./components/Footer";
-import { Container } from 'reactstrap';
-
-
+import Nav from "./components/Nav";
+import "./App.css";
 
 function App() {
-  return (
-      <Router>
-        <>
-          <TopNav />
-          
-          
-          <div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/signup" render={(props) => <Auth {...props} action="signup" />} />
-              <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path = "/UserInfo" render = {(props) => <UserInfo {...props} />}/>
-              <Route component= {NoMatch} />
-            </Switch>
-          </div>
-                 </>
-      </Router>
-  );
-}
+   return (
+     <Router>
+     <div>
+       <Nav />
+       <Switch>
+         <Route exact path="/" component={SearchBooks} />
+         <Route exact path="/saved" component={SaveBooks} />
+         <Route exact path="/saved/:id" component={SaveBooks} />
+       </Switch>
+        <Footer />
+     </div>
+     </Router>
+   );
+ }
 
-export default App;
+ export default App;
+
