@@ -1,67 +1,29 @@
 import axios from "axios";
-import unirest from "unirest";
 
 export default {
-  // logs in user
-  login: function(loginInfo) {
-    return axios.post("/api/users/login", loginInfo);
-  },
 
-  // signs up user, then logs them in
-  signup: function(signupInfo) {
-    return axios.post("/api/users/signup", signupInfo);
-  },
+    //calls the api
+    getGoogleBooks: function(query) {
+        return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
+    },
 
-  // checks to see if user is logged in, then returns the user
-  isLoggedIn: function() {
-    return axios.get("/api/users/profile");
-  },
+    //gets all books
+    getBooks: function() {
+        return axios.get("/api/books");
+    },
 
-  updateProfile: function(userInfo){
-    return axios.put("/api/users/updateProfile", userInfo);
-  },
-  // checks to see if the user is logged in and and admin, then returns the user
-  isAdmin: function() {
-    return axios.get("/api/users/logout")
-  },
+    //gets the book with the given id
+    getBook: function(id) {
+        return axios.get("/api/books/" + id);
+    },
 
-  // logs out the user
-  logout: function() {
-    return axios.get("/api/users/logout")
-  },
+    // deletes book with a specific ID
+    deleteBook: function(id) {
+        return axios.delete("/api/books/" + id);
+    },
 
-  // api that gets a random Chuck Norris Joke
-  ChuckNorris: function() {
-    return axios.get("https://api.icndb.com/jokes/random");
-  },
-
-  // PlanMeal: function() { 
-  //  console.log("PlanMeal")
-  
-  //   let req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate");
-  
-  //   req.query({
-  //       "timeFrame": "week",
-  //       "targetCalories": "2000",
-  //       "diet": "vegetarian",
-  //       "exclude": "shellfish"
-  //   });
-    
-  //   req.headers({
-  //       "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-  //       "x-rapidapi-key": "fcb3b27bb6mshc7a98d29060e823p1674e7jsn37cc5c313307"
-  //   });
-        
-       
-  
-  //   req.end(function (res) {
-  //       console.log(res);
-  //       if (res.error) throw new Error(res.error);
-  //       console.log(res.body);
-        
-  //   });
-    
-  // }
-  
-
-};
+    //save book to database.
+    saveBook: function(savedBooks) {
+        return axios.post("/api/books", savedBooks);
+    }
+}
