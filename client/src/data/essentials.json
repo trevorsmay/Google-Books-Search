@@ -1,0 +1,64 @@
+[
+    {
+        "workout_type":"maintain",
+        "exercise_name":"Yoga",
+        "type":"STRING",
+        "time": [15,60,90],
+        "type_id":3,
+        "id": 1
+    },
+
+    {
+        "workout_type":"maintain",
+        "exercise_name":"Zumba",
+        "type":"STRING",
+        "time": [15,60,90],
+        "type_id":3,
+        "id": 2
+    },
+
+    {
+        "workout_type":"maintain",
+        "exercise_name":"Soccer",
+        "type":"STRING",
+        "time": [15,60,90],
+        "type_id":3,
+        "id": 3
+    },
+
+    {
+        "workout_type":"maintain",
+        "exercise_name":"Volleyball",
+        "type":"STRING",
+        "time": [15,60,90],
+        "type_id":3,
+        "id": 4
+    },
+
+    {
+        "workout_type":"maintain",
+        "exercise_name":"Basketball",
+        "type":"STRING",
+        "time": [15,60,90],
+        "type_id":3,
+        "id": 5
+    },
+
+    {
+        "workout_type":"maintain",
+        "exercise_name":"Tennis",
+        "type":"STRING",
+        "time": [15,60,90],
+        "type_id":3,
+        "id": 6
+    },
+
+    {
+        "workout_type":"maintain",
+        "exercise_name":"Row a Boat",
+        "type":"STRING",
+        "time": [15,60,90],
+        "type_id":3,
+        "id": 7
+    }
+]
